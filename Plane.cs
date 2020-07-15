@@ -32,11 +32,14 @@ namespace HLesson_Inheritance
             Console.WriteLine("The Plane started with switches.");
         }
 
+        // Displays results in console
         public override void GetVehicleDetails()
         {
             base.GetVehicleDetails();
 
             StringBuilder textSummaryBuilder = new StringBuilder();
+
+            textSummaryBuilder.Append($"\n\n***** START {this.GetType().ToString()} CHILD GetVehicleDetails() VALUES ***** \n\n");
 
             textSummaryBuilder.Append($"{this.GetType().ToString()} landing gear: {blnLandingGear} \n");
             textSummaryBuilder.Append($"{this.GetType().ToString()} number of engines: {NumOfEngines} \n");
@@ -44,6 +47,25 @@ namespace HLesson_Inheritance
 
 
             Console.WriteLine(textSummaryBuilder.ToString());
+
+        }
+
+        // Returns result to be used elsewhere in the app
+        public override string ToString()
+        {
+
+            StringBuilder textSummaryBuilder = new StringBuilder();
+
+            textSummaryBuilder.Append(base.ToString());
+
+
+            textSummaryBuilder.Append($"\n\n***** START {this.GetType().ToString()} CHILD ToString() VALUES ***** \n\n");
+
+            textSummaryBuilder.Append($"{this.GetType().ToString()} landing gear: {blnLandingGear} \n");
+            textSummaryBuilder.Append($"{this.GetType().ToString()} number of engines: {NumOfEngines} \n");
+            textSummaryBuilder.Append($"{this.GetType().ToString()} wingspan: {wingSpan} \n");
+
+            return textSummaryBuilder.ToString();
 
         }
         #endregion

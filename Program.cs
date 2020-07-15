@@ -8,7 +8,7 @@ namespace HLesson_Inheritance
         {
             Console.WriteLine("Hello World from HLesson_Inheritance!");
 
-            //Declare and call classes here...added by pb 071420200
+            //Declare and call classes here...added by pb 07142020
             Car car1 = new Car(true, true, 4, 6, "red", 4, 2016);
             car1.Start();
             car1.Stop();
@@ -18,6 +18,9 @@ namespace HLesson_Inheritance
             car1.Stop();            
             car1.Stop();
             car1.GetVehicleDetails();
+
+            // Prints base class values and custom values
+            Console.WriteLine(car1.ToString());
 
             //Vehicle vehicle2 = new Vehicle(2, 6, "red", 4);
             //vehicle2.Start();
@@ -43,6 +46,9 @@ namespace HLesson_Inheritance
             boat1.Stop();
             boat1.GetVehicleDetails();
 
+            // Prints base class values and custom values
+            Console.WriteLine(boat1.ToString());
+
             Plane plane1 = new Plane(true, 4, 80, 4, 150, "orange", 16, 2020);
             plane1.Start();
             plane1.Stop();
@@ -56,6 +62,10 @@ namespace HLesson_Inheritance
             plane1.Start();
             plane1.Start();
             plane1.GetVehicleDetails();
+
+            // Prints base class values and custom values
+            Console.WriteLine(plane1.ToString());
+
         }
     }
 }

@@ -8,6 +8,10 @@ namespace HLesson_Inheritance
     {
         #region Properties and Fields aka global variables
         //private string name { get; set; }
+
+        // Test (see Car.cs line 37)
+        //protected int doors { get; set; }
+
         private int doors { get; set; }
         private int seats { get; set; }
         private string color { get; set; }
@@ -33,7 +37,8 @@ namespace HLesson_Inheritance
         #endregion
 
         #region Methods
-        // 'virtual' allows any class that inherits from Vehicle to override this. This is an example of polymorphism 
+        // 'virtual' allows any class that inherits from Vehicle to override this. 
+        //This is an example of polymorphism 
         public virtual void Start()
         {
             if (isRunning == true)
@@ -65,6 +70,9 @@ namespace HLesson_Inheritance
         public virtual void GetVehicleDetails()
         {
             StringBuilder textSummaryBuilder = new StringBuilder();
+
+            textSummaryBuilder.Append($"\n\n***** START {this.GetType().ToString()} BASE GetVehicleDetails() VALUES ***** \n\n");
+
             textSummaryBuilder.Append($"{this.GetType().ToString()} doors: {doors} \n");
             textSummaryBuilder.Append($"{this.GetType().ToString()} seats: {seats} \n");
             textSummaryBuilder.Append($"{this.GetType().ToString()} color: {color} \n");
@@ -73,7 +81,26 @@ namespace HLesson_Inheritance
 
             //Print summary of vehivle details to console
             Console.WriteLine(textSummaryBuilder.ToString());
+
         }
-        #endregion
+
+        public override string ToString()
+        {
+            StringBuilder textSummaryBuilder = new StringBuilder();
+
+            textSummaryBuilder.Append($"\n\n***** START {this.GetType().ToString()} BASE ToString() VALUES ***** \n\n");
+
+            textSummaryBuilder.Append($"{this.GetType().ToString()} doors: {doors} \n");
+            textSummaryBuilder.Append($"{this.GetType().ToString()} seats: {seats} \n");
+            textSummaryBuilder.Append($"{this.GetType().ToString()} color: {color} \n");
+            textSummaryBuilder.Append($"{this.GetType().ToString()} wheels: {wheels} \n");
+            textSummaryBuilder.Append($"{this.GetType().ToString()} year made: {yearMade}");
+
+            //Print summary of vehicle details to console
+            return textSummaryBuilder.ToString();
+
+            #endregion
+        }
     }
+
 }
